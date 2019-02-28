@@ -12,7 +12,9 @@ class Album extends Component {
     this.state = {
       album: album,
       currentSong: album.songs[0],
-      isPlaying: false
+      isPlaying: false,
+      hovering: false,
+      hoveringOver: 0
     };
 
     this.audioElement = document.createElement('audio');
@@ -38,10 +40,33 @@ class Album extends Component {
      if (this.state.isPlaying && isSameSong) {
        this.pause();
      } else {
-        if (!isSameSong) { this.setSong(song); }  
+        if (!isSameSong) { this.setSong(song); }
        this.play();
      }
    }
+
+   handleHover(index){
+     this.setState({ hovering: true });
+     this.setState({hoveringOver: index })
+   }
+
+   endHover(){
+     this.setState({ hovering:false });
+   }
+
+   playButton(index){
+    var Button = {}
+    var ButtonNumber = this.state.hoveringOver
+
+
+     if (this.state.hovering){
+       Button = <td className="icon ion-md-play"></td> }
+       else{
+       Button = <td>  {index + 1}  </td>}
+
+       return Button
+     }
+
 
 
   render() {
@@ -66,12 +91,15 @@ class Album extends Component {
            <tbody>
            {
              this.state.album.songs.map( (song, index) =>
-                 <tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
-                 <td id="song-index"> Track # {index + 1} : </td>
+                 <tr className= "song-index"  key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.handleHover(index)} onMouseLeave={() => this.endHover()}>
+
+                 <td id= {index}  > {this.playButton(index)} </td>
+
                  <td id="song-title"> {song.title} </td>
                  <td id="song-duration"> {song.duration} seconds.</td>
                  </tr>
                  )
+
                }
 
 
