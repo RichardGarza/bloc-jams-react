@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
+import PlayerBar from './PlayerBar';
 
 class Album extends Component {
   constructor(props) {
@@ -32,7 +33,7 @@ class Album extends Component {
 
     setSong(song,index) {
       this.audioElement.src = song.audioSrc;
-      this.setState({ currentSong: index });
+      this.setState({ currentSong: this.state.album.songs[index] });
     }
     handleSongClick(song,index) {
      const isSameSong = this.state.currentSong === index;
@@ -42,7 +43,17 @@ class Album extends Component {
         if (!isSameSong) { this.setSong(song,index); }
        this.play();
      }
-   }
+}
+    handlePrevClick() {
+    const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
+    console.log(this.state.currentSong);
+    const newIndex = Math.max(0, currentIndex - 1);
+    const newSong = this.state.album.songs[newIndex];
+    this.setSong(newSong);
+    this.play();
+    }
+
+
 
 
   render() {
@@ -70,30 +81,29 @@ class Album extends Component {
                  <tr className= "song-index"  key={index} onClick={() => this.handleSongClick(song,index)} onMouseEnter={() =>  this.setState({ hovering:index + 1} )} onMouseLeave={() =>  this.setState({ hovering:false })}>
 
                  <td className= "song-button">
-                  <button className= "song-button-chooser">{
-                    (index === this.state.currentSong) ?
+                  <button className= "song-button-chooser">
+                  {   (index === this.state.currentSong) ?
                     <span className={(this.state.isPlaying) ? "icon ion-md-pause":"icon ion-md-play"}></span>
                     :
                      (index + 1 === this.state.hovering) ?
-                  <span className="icon ion-md-play"> </span>
-                  :
-                  <span> {index + 1} </span>}
-
+                    <span className="icon ion-md-play"> </span>
+                    :
+                    <span> {index + 1} </span>}
                   </button>
-
-
-
                  </td>
                  <td id="song-title"> {song.title} </td>
                  <td id="song-duration"> {song.duration} seconds.</td>
                  </tr>
                  )
-
                }
-
-
            </tbody>
          </table>
+         <PlayerBar
+           isPlaying={this.state.isPlaying}
+           currentSong={this.state.currentSong}
+           handleSongClick={() => this.handleSongClick(this.state.currentSong)}
+           handlePrevClick={() => this.handlePrevClick()}
+         />
       </section>
     );
   }
