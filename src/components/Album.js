@@ -49,10 +49,20 @@ class Album extends Component {
     console.log(this.state.currentSong);
     const newIndex = Math.max(0, currentIndex - 1);
     const newSong = this.state.album.songs[newIndex];
-    this.setSong(newSong);
+    this.setSong(newSong,newIndex);
     this.play();
     }
 
+    handleNextClick() {
+    const albumSongs = this.state.album.songs
+    const currentIndex = albumSongs.findIndex(song => this.state.currentSong === song);
+    console.log(this.state.currentSong);
+    const newIndex = Math.min(albumSongs.length, currentIndex + 1);
+    console.log(newIndex);
+    const newSong = this.state.album.songs[newIndex];
+    this.setSong(newSong,newIndex);
+    this.play();
+    }
 
 
 
@@ -101,8 +111,9 @@ class Album extends Component {
          <PlayerBar
            isPlaying={this.state.isPlaying}
            currentSong={this.state.currentSong}
-           handleSongClick={() => this.handleSongClick(this.state.currentSong)}
+           handleSongClick={() => this.handleSongClick(this.state.currentSong,this.state.currentSong)}
            handlePrevClick={() => this.handlePrevClick()}
+           handleNextClick={() => this.handleNextClick()}
          />
       </section>
     );
