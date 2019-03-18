@@ -36,7 +36,7 @@ class Album extends Component {
       this.setState({ currentSong: this.state.album.songs[index] });
     }
     handleSongClick(song,index) {
-     const isSameSong = this.state.currentSong === index;
+     const isSameSong = this.state.currentSong === song;
      if (this.state.isPlaying && isSameSong) {
        this.pause();
      } else {
@@ -89,7 +89,7 @@ class Album extends Component {
 
                  <td className= "song-button">
                   <button className= "song-button-chooser">
-                  {   (index === this.state.currentSong) ?
+                  {   (song === this.state.currentSong) ?
                     <span className={(this.state.isPlaying) ? "icon ion-md-pause":"icon ion-md-play"}></span>
                     :
                      (index + 1 === this.state.hovering) ?
