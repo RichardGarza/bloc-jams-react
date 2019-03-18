@@ -73,7 +73,7 @@ class Album extends Component {
          <h1 id="album-title">{this.state.album.title}</h1>
 
          <h2 className="artist">{this.state.album.artist}</h2>
-         <div id="release-info">{this.state.album.releaseInfo}</div>
+         <div id="release-info">This album was released in {this.state.album.releaseInfo}.</div>
         </div>
        </section>
        <table id="song-list">
@@ -98,8 +98,8 @@ class Album extends Component {
                     <span> {index + 1} </span>}
                   </button>
                  </td>
-                 <td id="song-title"> {song.title} </td>
-                 <td id="song-duration"> {song.duration} seconds.</td>
+                 <td id="song-title"> {song.title}    </td>
+                 <td id="song-duration"> {parseInt(song.duration / 60)} minutes and {song.duration % 60} seconds.</td>
                  </tr>
                  )
                }
