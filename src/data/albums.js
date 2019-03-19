@@ -6,10 +6,10 @@ export default [{
     slug: 'the-come-up',
     songs: [
       { title: 'Intro', duration: '27', audioSrc: '/assets/music/thecomeup/intro.mp3' },
+      { title: 'Sorry For Being Dope', duration: '169', audioSrc: '/assets/music/thecomeup/being-dope.mp3' },
       { title: '20-20', duration: '138', audioSrc: '/assets/music/thecomeup/20-20.mp3' },
       { title: 'Bad Blood', duration: '105', audioSrc: '/assets/music/thecomeup/bad-blood.mp3' },
       { title: 'Nobody Notice You', duration: '103', audioSrc: '/assets/music/thecomeup/nobody-notice.mp3' },
-      { title: 'Sorry For Being Dope', duration: '169', audioSrc: '/assets/music/thecomeup/being-dope.mp3' },
       { title: 'Up Up & Away', duration: '152', audioSrc: '/assets/music/thecomeup/up-up-away.mp3' },
       { title: 'The Come Up', duration: '171', audioSrc: '/assets/music/thecomeup/come-up.mp3' },
       { title: 'Saying Something', duration: '61', audioSrc: '/assets/music/thecomeup/say-something.mp3' }
