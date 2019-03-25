@@ -1,9 +1,34 @@
 import React, { Component } from 'react';
+import '../index.css';
+
 
 class PlayerBar extends Component {
   render() {
     return (
       <section className="player-bar">
+
+        <span className="player-bar-grid">
+          <div className="current-time">
+            <span>{this.props.formatTime(this.props.currentTime)} </span>
+          </div>
+          <div className="time-control-bar">
+          <section id="time-control-bar">
+            <input
+              type="range"
+              className="seek-bar"
+              value={(this.props.currentTime / this.props.duration) || 0}
+              max="1"
+              min="0"
+              step="0.01"
+              onChange={this.props.handleTimeChange}
+            />
+            </section>
+            </div>
+            <div className="song-duration">
+              <span>{this.props.formatTime(this.props.duration)} </span>
+            </div>
+          </span>
+
        <section id="buttons">
          <button id="previous" onClick={this.props.handlePrevClick}>
            <span className="icon ion-md-skip-backward"></span>
@@ -15,38 +40,30 @@ class PlayerBar extends Component {
            <span className="icon ion-md-skip-forward"></span>
          </button>
        </section>
-       <section id="time-control">
-       <div className="current-time">
-             { (parseInt(this.props.currentTime % 60) === 1 )  ?
-                 <span>{this.props.formatTime(this.props.currentTime)} has elapsed.</span>
-                   :
-                 <span> {this.props.formatTime(this.props.currentTime)} have elapsed.</span> }
-       </div>
-         <input
-           type="range"
-           className="seek-bar"
-           value={(this.props.currentTime / this.props.duration) || 0}
-           max="1"
-           min="0"
-           step="0.01"
-           onChange={this.props.handleTimeChange}
-         />
-         <div className="total-time">
-           This song is {this.props.formatTime(this.props.duration)} long.
-        </div>
-       </section>
-       <section id="volume-control">
-         <div className="icon ion-md-volume-low"></div>
-         <input
-          type="range"
-          className="seek-bar"
-          value={this.props.currentVolume}
-          max="1"
-          min="0"
-          step="0.05"
-          onChange={this.props.handleVolumeChange}
-          />
-         <div className="icon ion-md-volume-high"></div>
+
+
+
+
+       <section id="volume-control" className="volume">
+         <span className="volume-control-grid">
+           <span className='volume-down'>
+              <div className="icon ion-md-volume-low"></div>
+           </span>
+           <span className='volume-bar'>
+               <input
+                type="range"
+                className="seek-bar"
+                value={this.props.currentVolume}
+                max="1"
+                min="0"
+                step="0.05"
+                onChange={this.props.handleVolumeChange}
+                />
+            </span>
+            <span className='volume-up'>
+             <div className="icon ion-md-volume-high"></div>
+           </span>
+         </span>
        </section>
       </section>
     );

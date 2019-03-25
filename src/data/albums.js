@@ -41,18 +41,18 @@ export default [{
     albumCover: '/assets/images/album_covers/07.png',
     slug: 'the-throwback',
     songs: [
-      { title: 'Freedom', duration: '190', audioSrc: '/assets/music/throwback/freedom.wav' },
-      { title: 'Eyes', duration: '223', audioSrc: '/assets/music/throwback/eyes.wav' },
-      { title: 'Six Figures', duration: '242', audioSrc: '/assets/music/throwback/six-figures.wav' },
-      { title: "RchyRch's Business", duration: '213', audioSrc: '/assets/music/throwback/rchyrch-business.wav' },
-      { title: 'Run It', duration: '205', audioSrc: '/assets/music/throwback/run-it.wav' },
-      { title: "What's The Money For?", duration: '257', audioSrc: "/assets/music/throwback/what's-the-money-for.wav" },
-      { title: 'January 16th', duration: '240', audioSrc: '/assets/music/throwback/jan-16.wav' },
-      { title: 'Wait A Minute', duration: '140', audioSrc: '/assets/music/throwback/wait-a-minute.wav' },
-      { title: 'Falling Down Again', duration: '199', audioSrc: '/assets/music/throwback/falling.wav' },
-      { title: 'Can I?', duration: '190', audioSrc: '/assets/music/throwback/can-i.wav' },
-      { title: 'Get It Now', duration: '190', audioSrc: '/assets/music/throwback/get-it-now.wav' },
-      { title: 'Key To Life', duration: '131', audioSrc: '/assets/music/throwback/key-to-life.wav' }
+      { title: 'Freedom', duration: '190', audioSrc: '/assets/music/throwback/freedom.mp3' },
+      { title: 'Eyes', duration: '223', audioSrc: '/assets/music/throwback/eyes.mp3' },
+      { title: 'Six Figures', duration: '242', audioSrc: '/assets/music/throwback/six-figures.mp3' },
+      { title: "RchyRch's Business", duration: '213', audioSrc: '/assets/music/throwback/rchyrch-business.mp3' },
+      { title: 'Run It', duration: '205', audioSrc: '/assets/music/throwback/run-it.mp3' },
+      { title: "What's The Money For?", duration: '257', audioSrc: "/assets/music/throwback/what's-the-money-for.mp3" },
+      { title: 'January 16th', duration: '240', audioSrc: '/assets/music/throwback/jan-16.mp3' },
+      { title: 'Wait A Minute', duration: '140', audioSrc: '/assets/music/throwback/wait-a-minute.mp3' },
+      { title: 'Falling Down Again', duration: '199', audioSrc: '/assets/music/throwback/falling.mp3' },
+      { title: 'Can I?', duration: '190', audioSrc: '/assets/music/throwback/can-i.mp3' },
+      { title: 'Get It Now', duration: '190', audioSrc: '/assets/music/throwback/get-it-now.mp3' },
+      { title: 'Key To Life', duration: '131', audioSrc: '/assets/music/throwback/key-to-life.mp3' }
     ]
 }, {
     title: 'Talkin Shit',
@@ -61,15 +61,15 @@ export default [{
     albumCover: '/assets/images/album_covers/05.png',
     slug: 'talkin-shit',
     songs: [
-      { title: 'All I Do', duration: '161.71', audioSrc: '/assets/music/talkinshit/all-i-do.wav' },
-      { title: 'Cookin The Stu', duration: '103.96', audioSrc: '/assets/music/talkinshit/cookin-the-stu.wav' },
-      { title: 'Ballin', duration: '268.45', audioSrc: '/assets/music/talkinshit/ballin.wav' },
-      { title: "I'm In", duration: '153.14', audioSrc: "/assets/music/talkinshit/I'm-In.wav" },
-      { title: "Stand Alone", duration: '153.14', audioSrc: '/assets/music/talkinshit/stand-alone.wav' },
-      { title: "I Just Don't", duration: '153.14', audioSrc: '/assets/music/talkinshit/i-just-dont.wav' },
-      { title: "Atlantic Time", duration: '153.14', audioSrc: '/assets/music/talkinshit/atlantic-time.wav' },
-      { title: "Arrival", duration: '153.14', audioSrc: '/assets/music/talkinshit/arrival.wav' },
-      { title: "On The Way", duration: '374.22', audioSrc: '/assets/music/talkinshit/on-the-way.wav' }
+      { title: 'All I Do', duration: '161.71', audioSrc: '/assets/music/talkinshit/all-i-do.mp3' },
+      { title: 'Cookin The Stu', duration: '103.96', audioSrc: '/assets/music/talkinshit/cookin-the-stu.mp3' },
+      { title: 'Ballin', duration: '268.45', audioSrc: '/assets/music/talkinshit/ballin.mp3' },
+      { title: "I'm In", duration: '153.14', audioSrc: "/assets/music/talkinshit/I'm-In.mp3" },
+      { title: "Stand Alone", duration: '153.14', audioSrc: '/assets/music/talkinshit/stand-alone.mp3' },
+      { title: "I Just Don't", duration: '153.14', audioSrc: '/assets/music/talkinshit/i-just-dont.mp3' },
+      { title: "Atlantic Time", duration: '153.14', audioSrc: '/assets/music/talkinshit/atlantic-time.mp3' },
+      { title: "Arrival", duration: '153.14', audioSrc: '/assets/music/talkinshit/arrival.mp3' },
+      { title: "On The Way", duration: '374.22', audioSrc: '/assets/music/talkinshit/on-the-way.mp3' }
     ]
 }, {
   title: 'The Colors',

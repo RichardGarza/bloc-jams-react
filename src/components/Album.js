@@ -37,6 +37,9 @@ class Album extends Component {
     componentDidMount() {
       this.eventListeners = {
        timeupdate: e => {
+         this.audioElement.currentTime === this.audioElement.duration ?
+         this.handleNextClick()
+         :
          this.setState({ currentTime: this.audioElement.currentTime });
        },
        durationchange: e => {
@@ -67,6 +70,7 @@ class Album extends Component {
        this.play();
      }
 }
+
     handlePrevClick() {
     const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
     const newIndex = Math.max(0, currentIndex - 1);
@@ -101,26 +105,20 @@ class Album extends Component {
      const FormattedTime =
 
      <span className="current-time">
-      <span>
-          { parseInt(duration / 60)    >  0  ?
-              <span>
-              { parseInt(duration / 60)    === 1  ?
-                <span> {parseInt(duration / 60)} minute and </span>
+        <span>
+            { parseInt(duration / 60)    >  0  ?
+                  <span> {parseInt(duration / 60)} : </span>
                 :
-                <span> {parseInt(duration / 60)} minutes and </span> }
-              </span>
-
-              :
-              <span> </span>
-            }
-      </span>
-      <span>
-              { (parseInt(duration % 60) === 1 )  ?
-                  <span> {parseInt(duration % 60)} second</span>
-                  :
-                  <span> {parseInt(duration % 60)} seconds</span> }
-      </span>
-
+                <span> 0 :</span>
+              }
+        </span>
+        <span>
+            { parseInt(duration % 60)    <  10  ?
+                  <span> 0{parseInt(duration % 60)}</span>
+                :
+                <span> {parseInt(duration % 60)}</span>
+              }
+        </span>
      </span>
 
      if (isNaN(duration)){
@@ -134,7 +132,7 @@ class Album extends Component {
 
   render() {
     return (
-      <section className="album">
+      <section  className="album">
        <section id="album-info">
         <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title}/>
         <div className="album-details">
@@ -175,6 +173,7 @@ class Album extends Component {
            </tbody>
          </table>
          <PlayerBar
+
            isPlaying={this.state.isPlaying}
            currentSong={this.state.currentSong}
            handleSongClick={() => this.handleSongClick(this.state.currentSong,this.state.currentSong)}

@@ -9,18 +9,30 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>
-         <nav>
-          <Link to='/'>Landing</Link>
-          <Link to='/library'>Library</Link>
-         </nav>
-         <h1>MyTunes </h1>
-         </header>
-         <main>
-          <Route exact path="/" component={Landing} />
-          <Route path="/library" component={Library} />
-          <Route path="/album/:slug" component={Album} />
-         </main>
+       <div className="container">
+
+           <a href="/" className="my-tunes-logo">
+             <img src="/assets/images/my-tunes-logo.png" className="my-tunes-logo" alt="Place Logo Here"  />
+           </a>
+
+           <span className="link-bar-home">
+              <Link className="link-bar" to='/'>Home</Link>
+           </span>
+
+           <span className="link-bar-library">
+             <Link className="link-bar" to='/library'>Library</Link>
+           </span>
+
+          
+
+          <Route className="content" exact path="/" component={Landing} />
+
+          <Route className="content" path="/library" component={Library} />
+
+          <Route className="album" path="/album/:slug" component={Album} />
+
+
+         </div>
       </div>
     );
   }
